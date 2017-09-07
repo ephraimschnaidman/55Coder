@@ -3,15 +3,13 @@
 int Dealership::totalVehicles = 0;
 
 Dealership::Dealership() {
-	vehicleNumber = 0;
-	modelAmount = 0;
+	newModelAmount = 0;
 	totalVehicles++;
 }
 
-Dealership::Dealership(string newName, int newVehicleNumber, double newModelAmount) {
-	name = newName;
-	vehicleNumber = newVehicleNumber;
-	modelAmount = newModelAmount;
+Dealership::Dealership(string name, double modelAmount) {
+	newName = name;
+	newModelAmount = modelAmount;
 	totalVehicles++;
 }
 
@@ -20,41 +18,34 @@ Dealership::~Dealership() {
 }
 
 string Dealership::getName() const {
-	return name;
-}
-
-int Dealership::getVehicleNumber() const {
-	return vehicleNumber;
+	return newName;
 }
 
 double Dealership::getModelAmount() const {
-	return modelAmount;
+	return newModelAmount;
 }
 
-void Dealership::setName(string newName) {
-	name = newName;
+void Dealership::setName(string name) {
+	newName = name;
 }
 
-void Dealership::setVehicleNumber(int newVehicleNumber) {
-	vehicleNumber = newVehicleNumber;
-}
-
-void Dealership::setModelAmount(double newModelAmount) {
-	totalVehicles -= modelAmount;
-	modelAmount = newModelAmount;
-	totalVehicles += modelAmount;
+void Dealership::setModelAmount(double modelAmount) {
+	totalVehicles -= newModelAmount;
+	newModelAmount = modelAmount;
+	totalVehicles += newModelAmount;
 }
 
 void Dealership::sell(double sell) {
-	modelAmount -= sell;
+	newModelAmount -= sell;
 	totalVehicles -= sell;
 }
 
 void Dealership::delivery(double delivery) {
-	modelAmount += delivery;
+	newModelAmount += delivery;
 	totalVehicles += delivery;
 }
 
 void Dealership::printDealerInfo() {
 	cout << endl << " Total Number of Vehicles in dealership: " << totalVehicles << endl;
+	cout << endl;
 }

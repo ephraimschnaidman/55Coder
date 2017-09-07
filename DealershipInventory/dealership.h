@@ -11,19 +11,15 @@ class Dealership {
 public:
 	Dealership();
 
-	Dealership(string, int, double);
+	Dealership(string, double);
 
 	~Dealership();
 
 	string getName() const;
 
-	int getVehicleNumber() const;
-
 	double getModelAmount() const;
 
 	void setName(string);
-	
-	void setVehicleNumber(int);
 
 	void setModelAmount(double);
 
@@ -35,9 +31,8 @@ public:
 
 private:
 
-	string name;
-	int vehicleNumber;
-	double modelAmount;
+	string newName;
+	double newModelAmount;
 
 	static int totalVehicles;
 	
