@@ -25,6 +25,10 @@ double Dealership::getModelAmount() const {
 	return newModelAmount;
 }
 
+string Dealership::getExchangeType() const {
+	return newExchangeType;
+}
+
 void Dealership::setName(string name) {
 	newName = name;
 }
@@ -45,7 +49,7 @@ void Dealership::delivery(double delivery) {
 	totalVehicles += delivery;
 }
 
-string Dealership::exchangeTypeLoop(string exchangeType) {
+void Dealership::setExchangeType(string exchangeType) {
 	int t;
 	t = 5;
 	while (exchangeType != "delivering" && exchangeType != "selling" && t > -1) {
@@ -71,8 +75,9 @@ string Dealership::exchangeTypeLoop(string exchangeType) {
 			cout << "Invalid entry. Exiting program.\n";
 			EXIT_FAILURE;
 		}
-	} cout << "You entered " << exchangeType;
-	return exchangeType;
+	}
+	newExchangeType = exchangeType; 
+	cout << endl;	
 }
 
 void Dealership::printDealerInfo() {

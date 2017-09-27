@@ -21,15 +21,17 @@ public:
 
 	double getModelAmount() const;
 
+	string getExchangeType() const;
+
 	void setName(string);
 
 	void setModelAmount(double);
+	
+	void setExchangeType(string);
 
 	void sell(double);
 	
 	void delivery(double);
-
-	string exchangeTypeLoop(string);
 
 	static void printDealerInfo();
 
@@ -37,6 +39,7 @@ private:
 
 	string newName;
 	double newModelAmount;
+	string newExchangeType;
 
 	static int totalVehicles;
 	

@@ -27,8 +27,10 @@ int main() {
 	//vehicle_1.setModelAmount(modelAmount);
 
 	cout << "You entered: " << vehicle_1.getName() << endl;/* << "Quantity: " << vehicle_1.getModelAmount() << endl;*/
+
+	vehicle_1.setExchangeType(exchangeType);
 	
-	vehicle_1.exchangeTypeLoop(exchangeType);
+	cout << "You entered: " << vehicle_1.getExchangeType() << endl;
 	
 	if (exchangeType == "selling") {
 		cout << "How many " << vehicle_1.getName() << "s are being sold? " << endl;
