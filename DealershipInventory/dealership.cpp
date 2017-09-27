@@ -1,55 +1,53 @@
 #include "dealership.h"
 
-int Dealership::totalVehicles = 0;
+using std::cout;
+using std::cin;
+using std::endl;
 
 Dealership::Dealership() {
-	newModelAmount = 0;
-	totalVehicles++;
-}
-
-Dealership::Dealership(string name, double modelAmount) {
-	newName = name;
-	newModelAmount = modelAmount;
-	totalVehicles++;
+	vehicleModelAmount = 0;
+	totalVehcleAmount = 0;
 }
 
 Dealership::~Dealership() {
-	totalVehicles--;
+	vehicleModelAmount--;
+	totalVehcleAmount--;
 }
 
-string Dealership::getName() const {
-	return newName;
+void Dealership::getVehicleModelData() {
+	cout << "Choose from the following vehicle models: Impreza, Forrester, Crosstrek, Legacy, Outback, WRX, or BRZ." << endl;
+	cin >> vehicleModelName;
+	cout << "Enter the model year: " << endl;
+	cin >> vehicleModelYear;	
 }
 
-double Dealership::getModelAmount() const {
-	return newModelAmount;
+void Dealership::delivery() {	
+	double del;
+	cout << "How many " << vehicleModelName << "s are being delivered?\n";
+	cin >> del;
+	vehicleModelAmount += del;	
 }
 
-string Dealership::getExchangeType() const {
-	return newExchangeType;
+void Dealership::selling() {
+	double sell;
+	cout << "How many " << vehicleModelName << "s are being sold?\n";
+	cin >> sell;
+	vehicleModelAmount -= sell;
 }
 
-void Dealership::setName(string name) {
-	newName = name;
+void Dealership::showVehicleModelData() {
+	cout << "Vehicle: " << vehicleModelName << '\n';
+	cout << "Model Year: " << vehicleModelYear << '\n';
+	cout << "Total " << vehicleModelAmount << '\n';
 }
 
-void Dealership::setModelAmount(double modelAmount) {
-	totalVehicles -= newModelAmount;
-	newModelAmount = modelAmount;
-	totalVehicles += newModelAmount;
+void Dealership::printDealerInfo() {
+	cout << endl << " Total Number of Vehicles in dealership: " << totalVehcleAmount << endl;
+	cout << endl;
 }
 
-void Dealership::sell(double sell) {
-	newModelAmount -= sell;
-	totalVehicles -= sell;
-}
 
-void Dealership::delivery(double delivery) {
-	newModelAmount += delivery;
-	totalVehicles += delivery;
-}
-
-void Dealership::setExchangeType(string exchangeType) {
+/*void Dealership::setExchangeType(string exchangeType) {
 	int t;
 	t = 5;
 	while (exchangeType != "delivering" && exchangeType != "selling" && t > -1) {
@@ -78,9 +76,4 @@ void Dealership::setExchangeType(string exchangeType) {
 	}
 	newExchangeType = exchangeType; 
 	cout << endl;	
-}
-
-void Dealership::printDealerInfo() {
-	cout << endl << " Total Number of Vehicles in dealership: " << totalVehicles << endl;
-	cout << endl;
-}
+}*/

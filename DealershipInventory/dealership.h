@@ -1,49 +1,33 @@
 #ifndef DEALERSHIP_H
 #define DEALERSHIP_H
-#define _GLIBCXX_USE_CXX11_ABI 1
 
 #include <iostream>
 #include <string>
 #include <stdlib.h>
 
-using namespace std;
-
 class Dealership {
+
+private:
+
+	char vehicleModelName[30];
+	char vehicleModelYear[4];
+	double vehicleModelAmount;
+	double totalVehcleAmount;
 
 public:
 	Dealership();
 
-	Dealership(string, double);
-
 	~Dealership();
 
-	string getName() const;
-
-	double getModelAmount() const;
-
-	string getExchangeType() const;
-
-	void setName(string);
-
-	void setModelAmount(double);
+	void getVehicleModelData();
 	
-	void setExchangeType(string);
+	void delivery();
 
-	void sell(double);
-	
-	void delivery(double);
+	void selling();
 
-	static void printDealerInfo();
+	void showVehicleModelData();
 
-private:
-
-	string newName;
-	double newModelAmount;
-	string newExchangeType;
-
-	static int totalVehicles;
-	
-
+	void printDealerInfo();
 };
 
 #endif 
