@@ -16,26 +16,19 @@ int main() {
 	int sellAmount;
 	int deliverAmount;
 
-	cout << "Choose from the following vehicle models: Impreza, Forrester, XV, Outback, WRX." << endl;
-	getline(cin, name, '\n');
-	cout << "Enter quantity: " << endl;
-	cin >> modelAmount;
+	cout << "Choose from the following vehicle models: Impreza, Forrester, Crosstrek, Legacy, Outback, WRX, or BRZ." << endl;
+	cin >> name;
+	/*cout << "Enter quantity: " << endl;
+	cin >> modelAmount;*/
 
 	Dealership vehicle_1;
 	
 	vehicle_1.setName(name);
-	vehicle_1.setModelAmount(modelAmount);
+	//vehicle_1.setModelAmount(modelAmount);
 
-	cout << "You entered: " << vehicle_1.getName() << endl << "Quantity: " << vehicle_1.getModelAmount() << endl;
-
-	Dealership::printDealerInfo();
+	cout << "You entered: " << vehicle_1.getName() << endl;/* << "Quantity: " << vehicle_1.getModelAmount() << endl;*/
 	
-	do {
-	cout << "Delivery or selling? Type \'delivering\' or \'selling\': " << endl;
-	getline(cin, exchangeType, '\n');		
-	} while (exchangeType != "delivering" && exchangeType != "selling");
-	
-	cout << "You entered: " << exchangeType << endl;	
+	vehicle_1.exchangeTypeLoop(exchangeType);
 	
 	if (exchangeType == "selling") {
 		cout << "How many " << vehicle_1.getName() << "s are being sold? " << endl;

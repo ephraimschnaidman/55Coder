@@ -1,8 +1,10 @@
 #ifndef DEALERSHIP_H
 #define DEALERSHIP_H
+#define _GLIBCXX_USE_CXX11_ABI 1
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -27,6 +29,8 @@ public:
 	
 	void delivery(double);
 
+	string exchangeTypeLoop(string);
+
 	static void printDealerInfo();
 
 private:
@@ -38,7 +42,5 @@ private:
 	
 
 };
-
-
 
 #endif 
