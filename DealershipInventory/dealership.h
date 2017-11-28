@@ -4,28 +4,24 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <iomanip> // io manipulator
+#include "vehicleDetails.h"
 
 class Dealership {
 
 private:
-
-	char vehicleModelName[30];
-	char vehicleModelYear[4];
-	double vehicleModelAmount;
 	double totalVehcleAmount;
 
 public:
 	Dealership();
 
-	~Dealership();
-
-	void getVehicleModelData();
+	~Dealership();	 
 	
-	void delivery();
+	void delivery(int d, int vehicleModelAmount);
 
-	void selling();
+	void selling(int s, int vehicleModelAmount);
 
-	void showVehicleModelData();
+	void inventoryDisplayChart();	//function to show data in tabular format
 
 	void printDealerInfo();
 };
